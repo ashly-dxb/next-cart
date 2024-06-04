@@ -67,7 +67,7 @@ const UpdatePost = () => {
       .then((res) => res.json())
       .then((respData) => {
         toast.success("Post updated successfully!", {
-          duration: 3000,
+          duration: 5000,
           position: "top-right",
         });
 

@@ -7,12 +7,11 @@ import { faSpinner, faRefresh } from "@fortawesome/free-solid-svg-icons";
 import { useRouter } from "next/navigation";
 import toast, { Toaster } from "react-hot-toast";
 
-import Image from "next/image";
-import Logout from "../components/Logout";
-import { auth } from "@/auth";
-import { redirect } from "next/navigation";
-
-import { useSession, signIn, signOut } from "next-auth/react";
+// import Image from "next/image";
+// import Logout from "../components/Logout";
+// import { auth } from "@/auth";
+// import { redirect } from "next/navigation";
+// import { useSession, signIn, signOut } from "next-auth/react";
 
 const CreatePost = () => {
   // const session = await auth();
@@ -72,7 +71,7 @@ const CreatePost = () => {
       .then((res) => res.json())
       .then((respData) => {
         toast.success("Post added successfully!", {
-          duration: 3000,
+          duration: 5000,
           position: "top-right",
         });
         setLoading(false);

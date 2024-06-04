@@ -8,6 +8,7 @@ import styles from "../../../container.module.css";
 import Layout from "../../components/MyLayout";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
+import toast, { Toaster } from "react-hot-toast";
 
 function SignUp() {
   const [user, setUser] = useState({
@@ -64,6 +65,12 @@ function SignUp() {
       const response = await axios.post("../api/users", user);
       if (response.data.success) {
         setLoading(false);
+
+        toast.success("Post updated successfully!", {
+          duration: 5000,
+          position: "top-right",
+        });
+
         router.push("/Login");
       } else {
         setError(response.data.message);
@@ -83,6 +90,8 @@ function SignUp() {
         <div className="grid grid-cols-2 gap-4 max-w-xl m-auto mb-8 mt-4">
           <h3 className={`${styles.pageHeading} text-2xl`}>Sign Up</h3>
         </div>
+
+        <Toaster />
 
         <div className="grid grid-cols-2 gap-4 max-w-xl m-auto">
           <div className="col-span-2">
