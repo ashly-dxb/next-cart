@@ -1,20 +1,9 @@
-import React, from "react";
 // import movieData from "../data";
 import styles from "../container.module.css";
 import Layout from "./components/MyLayout";
 // import { useSession, SessionProvider } from "next-auth/react";
 
-// export async function getServerSideProps() {
-//   return {
-//     props: {
-//       allMovies: movieData,
-//     },
-//   };
-// }
-
 const Home = () => {
-  // const session = useSession();
-
   return (
     <Layout>
       <div
