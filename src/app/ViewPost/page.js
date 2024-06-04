@@ -1,5 +1,5 @@
 "use client";
-import { useState, useEffect } from "react";
+import { Suspense, useState, useEffect } from "react";
 import moment from "moment";
 import styles from "../../container.module.css";
 import Layout from "../components/MyLayout";
@@ -7,7 +7,7 @@ import Layout from "../components/MyLayout";
 import { useSearchParams } from "next/navigation";
 import { useRouter } from "next/navigation";
 
-export default function ViewPost() {
+function ViewPost() {
   const [data, setData] = useState({});
   const [isLoading, setLoading] = useState(true);
 
@@ -81,3 +81,13 @@ export default function ViewPost() {
     </Layout>
   );
 }
+
+const Page = () => {
+  return (
+    <Suspense>
+      <ViewPost />
+    </Suspense>
+  );
+};
+
+export default Page;

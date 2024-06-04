@@ -1,5 +1,5 @@
 "use client";
-import { useState, useEffect } from "react";
+import { Suspense, useState, useEffect } from "react";
 import styles from "../../container.module.css";
 import Layout from "../components/MyLayout";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -108,6 +108,8 @@ const UpdatePost = () => {
           <h3 className={`${styles.pageHeading} text-2xl`}>Modify Post</h3>
         </div>
 
+        <Toaster />
+
         <form id="myForm" method="post" onSubmit={handleSubmit}>
           <input type="hidden" name="postID" value={postID} />
 
@@ -191,4 +193,14 @@ const UpdatePost = () => {
   );
 };
 
-export default UpdatePost;
+// export default UpdatePost;
+
+const Page = () => {
+  return (
+    <Suspense>
+      <UpdatePost />
+    </Suspense>
+  );
+};
+
+export default Page;
