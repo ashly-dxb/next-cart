@@ -23,8 +23,6 @@ export default function Custom404() {
           <br />
           <br />
           <br />
-          <br />
-          <br />
         </div>
       </div>
     </div>
